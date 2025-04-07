@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="images/vaficon_videocitesCharts_1.svg" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>VCharts+V1</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+        margin: auto;
+        margin-top: 20px;
+        font-weight: bold;
+        background-color: rgb(20, 8, 60);
+        max-width: 90%;
+        /* border: 1px, solid, gray; */
+        border-radius: 4px;
+      }
+      .headerContainer {
+        margin-top: 20px;
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+          object-fit: cover;
+          width: 100px;
+          margin: 0px 0px 20px 0px;
+        }
+        .logoRight {
+          cursor: pointer;
+          height: auto;
+          width: 100px;
+          /* background-color: #4caf50; */
+          padding: 0;
+          margin: 0;
+          img {
+            width: 50%;
+            height: 100%;
+            margin: auto;
+            display: block;
+          }
+        }
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .titleComtainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 30px;
+        }
+        h4 {
+          color: azure;
+          padding: 0%;
+          margin: 0px 0px 20px 0px;
+          font-weight: 100;
+        }
+        h1 {
+          color: azure;
+          padding: 0%;
+          margin: 0;
+          font-weight: 100;
+        }
+        #inputForm {
+          button {
+            border-radius: 4px;
+            height: 40px;
+          }
+          .inputContainer {
+            display: flex;
+            flex-direction: row;
+            max-width: 1000px;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* border: 1px solid red; */
+          }
+        }
+        img {
+          object-fit: cover;
+          width: 100px;
+          margin: 0px 0px 20px 0px;
+          /* height: 100px; */
+        }
+      }
+      form {
+        margin-bottom: 20px;
+      }
+      ::placeholder {
+        color: rgb(255, 255, 255);
+      }
+      .input-field {
+        color: white;
+        border: none;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 4px;
+        border: 1px, solid, white;
+      }
+      .input-fb {
+        background-color: #215f9a;
+      }
+      .input-tt {
+        background-color: #808080;
+      }
+      .input-tw {
+        background-color: #95b7d7;
+      }
+      .input-th {
+        background-color: #800080;
+      }
+      .input-vk {
+        background-color: #7b44c3;
+      }
+      .input-yt {
+        background-color: red;
+      }
+      .input-ok {
+        background-color: orange;
+      }
+      .input-ig {
+        background-color: rgb(212, 90, 196);
+      }
+      .input-vm {
+        background-color: #2a294b;
+      }
+      .input-dm {
+        background-color: #185065;
+      }
+      .buttons-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        button {
+          padding: 0%;
+          margin: 0%;
+          width: 200px;
+          height: 40px;
+          border: none;
+          font-size: 16px;
+        }
+      }
+      .export-button,
+      .toggle-button,
+      .random-button,
+      .upload-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 4px;
+      }
+      .export-button:hover,
+      .toggle-button:hover,
+      .random-button:hover,
+      .upload-button:hover {
+        background-color: #45a049;
+      }
+      svg {
+        display: block;
+        margin-top: 20px;
+        width: 90%;
+        box-sizing: border-box;
+      }
+      #chartContainer {
+        border: 1px, solid, gray;
+        border-radius: 4px;
+        background-color: rgba(182, 214, 218, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="headerContainer">
+      <div class="logoLeft">
+        <img
+          src="/images/Videocites-Logo-Latest_Dark-BG-cropped.png"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="logoRight">
+        <img src="/images/vaficon5.png" alt="" srcset="" />
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="titleComtainer">
+        <h1 style="color: #4caf50">
+          <samp style="font-size: 40px; font-weight: bold; color: #800080"
+            >V</samp
+          >Charts
+        </h1>
+        <h4>ONE CHART</h4>
+      </div>
+      <form id="inputForm">
+        <div class="inputContainer">
+          <input type="number" id="inputFB" class="input-field input-fb"
+          placeholder="Value for FB" color: white; />
+          <input
+            type="number"
+            id="inputTT"
+            class="input-field input-tt"
+            placeholder="Value for TT"
+          />
+          <input
+            type="number"
+            id="inputTW"
+            class="input-field input-tw"
+            placeholder="Value for TW"
+          />
+          <input
+            type="number"
+            id="inputTH"
+            class="input-field input-th"
+            placeholder="Value for TH"
+          />
+          <input
+            type="number"
+            id="inputVK"
+            class="input-field input-vk"
+            placeholder="Value for VK"
+          />
+          <input
+            type="number"
+            id="inputYT"
+            class="input-field input-yt"
+            placeholder="Value for YT"
+          />
+          <input
+            type="number"
+            id="inputOK"
+            class="input-field input-ok"
+            placeholder="Value for OK"
+          />
+          <input
+            type="number"
+            id="inputIG"
+            class="input-field input-ig"
+            placeholder="Value for IG"
+          />
+          <input
+            type="number"
+            id="inputVM"
+            class="input-field input-vm"
+            placeholder="Value for VM"
+          />
+          <input
+            type="number"
+            id="inputDM"
+            class="input-field input-dm"
+            placeholder="Value for DM"
+          />
+        </div>
+        <div class="buttons-container">
+          <button type="button" id="randomButton" class="random-button">
+            Generate Random Values
+          </button>
+          <button type="button" id="uploadButton" class="upload-button">
+            Upload Excel File
+          </button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <div id="chartContainer" style="width: 700px; height: auto"></div>
+      <button id="exportButtonSVG" class="export-button" style="display: none">
+        Export Chart as SVG
+      </button>
+      <button id="percentageButton" class="toggle-button" style="display: none">
+        Convert to Percentage
+      </button>
+      <button id="originalButton" class="toggle-button" style="display: none">
+        Show Original Values
+      </button>
+      <button id="exportButtonPNG" class="export-button" style="display: none">
+        Export Chart as PNG
+      </button>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+      <script>
+        let originalValues = [];
+
+        // Function to format large numbers into short format (K, M, B, T)
+        function formatNumber(num) {
+          if (num >= 1e12) {
+            return (num / 1e12).toFixed(2) + "T";
+          } else if (num >= 1e9) {
+            return (num / 1e9).toFixed(2) + "B";
+          } else if (num >= 1e6) {
+            return (num / 1e6).toFixed(2) + "M";
+          } else if (num >= 1e3) {
+            return (num / 1e3).toFixed(2) + "K";
+          } else {
+            return num.toString();
+          }
+        }
+
+        document
+          .getElementById("inputForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const container = document.getElementById("chartContainer");
+            container.innerHTML = ""; // Clear existing chart
+
+            const inputs = [
+              {
+                value: parseInt(document.getElementById("inputFB").value) || 0,
+                name: "FB",
+                color: getBackgroundColor("inputFB"),
+              },
+              {
+                value: parseInt(document.getElementById("inputTT").value) || 0,
+                name: "TT",
+                color: getBackgroundColor("inputTT"),
+              },
+              {
+                value: parseInt(document.getElementById("inputTW").value) || 0,
+                name: "TW",
+                color: getBackgroundColor("inputTW"),
+              },
+              {
+                value: parseInt(document.getElementById("inputTH").value) || 0,
+                name: "TH",
+                color: getBackgroundColor("inputTH"),
+              },
+              {
+                value: parseInt(document.getElementById("inputVK").value) || 0,
+                name: "VK",
+                color: getBackgroundColor("inputVK"),
+              },
+              {
+                value: parseInt(document.getElementById("inputYT").value) || 0,
+                name: "YT",
+                color: getBackgroundColor("inputYT"),
+              },
+              {
+                value: parseInt(document.getElementById("inputOK").value) || 0,
+                name: "OK",
+                color: getBackgroundColor("inputOK"),
+              },
+              {
+                value: parseInt(document.getElementById("inputIG").value) || 0,
+                name: "IG",
+                color: getBackgroundColor("inputIG"),
+              },
+              {
+                value: parseInt(document.getElementById("inputVM").value) || 0,
+                name: "VM",
+                color: getBackgroundColor("inputVM"),
+              },
+              {
+                value: parseInt(document.getElementById("inputDM").value) || 0,
+                name: "DM",
+                color: getBackgroundColor("inputDM"),
+              },
+            ].filter((input) => input.value > 0);
+
+            if (inputs.length === 0) return;
+
+            originalValues = [...inputs]; // Store original values
+            function getBackgroundColor(elementId) {
+              const element = document.getElementById(elementId);
+              if (element) {
+                // Use getComputedStyle to retrieve the background color
+                return window.getComputedStyle(element).backgroundColor;
+              }
+              return "transparent"; // Default if the element doesn't exist
+            }
+            const maxValue = Math.max(...inputs.map((input) => input.value));
+            const barHeight = 30;
+            const gap = 10;
+            const margin = 10; // Margin of 10px inside the chart container
+            const chartHeight =
+              inputs.length * (barHeight + gap) - gap + 2 * margin; // Added margin to the chart height
+
+            const svg = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "svg"
+            );
+            svg.setAttribute("width", "700");
+            svg.setAttribute("height", chartHeight);
+            svg.setAttribute("viewBox", `0 0 500 ${chartHeight}`);
+            svg.setAttribute("style", "margin: 0; padding: 0;");
+
+            const chartGroup = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "g"
+            );
+            chartGroup.setAttribute(
+              "transform",
+              `translate(${margin}, ${margin})`
+            );
+            svg.appendChild(chartGroup);
+
+            inputs.forEach((input, index) => {
+              let calculatedWidth =
+                (input.value / maxValue) * (500 - 2 * margin);
+              const barWidth = Math.max(calculatedWidth, 2);
+              const y = index * (barHeight + gap);
+
+              const rect = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "rect"
+              );
+              rect.setAttribute("x", "0");
+              rect.setAttribute("y", y);
+              rect.setAttribute("width", barWidth);
+              rect.setAttribute("height", barHeight);
+              rect.setAttribute("fill", input.color);
+              rect.setAttribute("rx", "4");
+              rect.setAttribute("ry", "4");
+              chartGroup.appendChild(rect);
+
+              // Display the name 10px left of the bar
+              const nameText = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "text"
+              );
+              nameText.setAttribute("x", "-10");
+              nameText.setAttribute("y", y + barHeight / 2 + 5);
+              nameText.setAttribute("fill", input.color);
+              nameText.setAttribute("text-anchor", "end");
+              nameText.textContent = input.name;
+              chartGroup.appendChild(nameText);
+
+              // Display the formatted value 10px outside the bar
+              const valueText = document.createElementNS(
+                "http://www.w3.org/2000/svg",
+                "text"
+              );
+              valueText.setAttribute("x", barWidth + 10);
+              valueText.setAttribute("y", y + barHeight / 2 + 5);
+              valueText.setAttribute("fill", "white");
+              valueText.textContent = formatNumber(input.value);
+              chartGroup.appendChild(valueText);
+            });
+
+            container.appendChild(svg);
+
+            document.getElementById("exportButtonSVG").style.display = "block";
+            document.getElementById("percentageButton").style.display = "block";
+            document.getElementById("originalButton").style.display = "block";
+          });
+
+        document
+          .getElementById("percentageButton")
+          .addEventListener("click", function () {
+            const totalValue = originalValues.reduce(
+              (sum, input) => sum + input.value,
+              0
+            );
+            const texts = document.querySelectorAll(
+              "#chartContainer svg text:nth-child(3n)"
+            );
+            texts.forEach((text, index) => {
+              const percentage =
+                ((originalValues[index].value / totalValue) * 100).toFixed(1) +
+                "%";
+              text.textContent = percentage;
+            });
+          });
+
+        document
+          .getElementById("originalButton")
+          .addEventListener("click", function () {
+            const texts = document.querySelectorAll(
+              "#chartContainer svg text:nth-child(3n)"
+            );
+            texts.forEach((text, index) => {
+              text.textContent = formatNumber(originalValues[index].value);
+            });
+          });
+
+        document
+          .getElementById("randomButton")
+          .addEventListener("click", function () {
+            const ids = [
+              "inputFB",
+              "inputTT",
+              "inputTW",
+              "inputTH",
+              "inputVK",
+              "inputYT",
+              "inputOK",
+              "inputIG",
+              "inputVM",
+              "inputDM",
+            ];
+            ids.forEach((id) => {
+              document.getElementById(id).value =
+                Math.floor(Math.random() * 100000000) + 1;
+            });
+          });
+        // Refresh page when clicking the logoRight image
+        document
+          .querySelector(".logoRight img")
+          .addEventListener("click", function () {
+            location.reload();
+          });
+
+        document
+          .getElementById("exportButtonPNG")
+          .addEventListener("click", function () {
+            const svgElement = document.querySelector("#chartContainer svg");
+            // Add a <style> element to embed the font-family and font-weight information
+            const styleElement = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "style"
+            );
+            styleElement.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+      text {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+      }
+    `;
+            svgElement.insertBefore(styleElement, svgElement.firstChild); // Insert at the top of the SVG
+            const serializer = new XMLSerializer();
+            const svgString = serializer.serializeToString(svgElement);
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
+            const img = new Image();
+
+            img.onload = function () {
+              canvas.width = img.width;
+              canvas.height = img.height;
+              ctx.drawImage(img, 0, 0);
+
+              canvas.toBlob(function (blob) {
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "chart.png";
+                link.click();
+                URL.revokeObjectURL(link.href);
+              }, "image/png");
+            };
+
+            img.src = "data:image/svg+xml;base64," + btoa(svgString);
+          });
+
+        // Show PNG export button when chart is generated
+        document
+          .getElementById("inputForm")
+          .addEventListener("submit", function () {
+            document.getElementById("exportButtonPNG").style.display = "block";
+          });
+        document
+          .getElementById("exportButtonSVG")
+          .addEventListener("click", function () {
+            const svg = document.querySelector("#chartContainer svg");
+
+            // Add a <style> element to embed the font-family and font-weight information
+            const styleElement = document.createElementNS(
+              "http://www.w3.org/2000/svg",
+              "style"
+            );
+            styleElement.textContent = `
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+      text {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+      }
+    `;
+            svg.insertBefore(styleElement, svg.firstChild); // Insert at the top of the SVG
+
+            const serializer = new XMLSerializer();
+            const svgBlob = new Blob([serializer.serializeToString(svg)], {
+              type: "image/svg+xml",
+            });
+            const url = URL.createObjectURL(svgBlob);
+
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "chart.svg";
+            link.click();
+
+            URL.revokeObjectURL(url);
+          });
+
+        document
+          .getElementById("uploadButton")
+          .addEventListener("click", function () {
+            const input = document.createElement("input");
+            input.type = "file";
+            input.accept = ".xlsx";
+            input.addEventListener("change", function (event) {
+              const file = event.target.files[0];
+              const reader = new FileReader();
+
+              reader.onload = function (e) {
+                const data = new Uint8Array(e.target.result);
+                const workbook = XLSX.read(data, { type: "array" });
+                const firstSheetName = workbook.SheetNames[0];
+                const sheet = workbook.Sheets[firstSheetName];
+                const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+                rows.forEach((row) => {
+                  if (row.length >= 2) {
+                    const [name, value] = row;
+                    const inputField = document.getElementById(`input${name}`);
+                    if (inputField) {
+                      inputField.value = value;
+                    }
+                  }
+                });
+
+                document
+                  .getElementById("inputForm")
+                  .dispatchEvent(new Event("submit"));
+              };
+
+              reader.readAsArrayBuffer(file);
+            });
+
+            input.click();
+          });
+      </script>
+    </div>
+  </body>
+</html>
